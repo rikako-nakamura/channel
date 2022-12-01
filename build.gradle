@@ -27,6 +27,7 @@ dependencies {
 	runtimeOnly 'com.h2database:h2:2.1.214' // 2.1.214を指定
 	annotationProcessor 'org.projectlombok:lombok:1.18.24' // 1.18.24を指定
 	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.1'  // 2.7.1を指定
+	testImplementation 'org.dbunit:dbunit:2.7.3'
 }
 
 tasks.named('test') {
