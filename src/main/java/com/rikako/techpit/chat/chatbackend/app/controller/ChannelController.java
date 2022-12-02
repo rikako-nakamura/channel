@@ -11,21 +11,26 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rikako.techpit.chat.chatbackend.app.service.ChannelService;
 import com.rikako.techpit.chat.chatbackend.domain.hello.model.channels.model.Channel;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/channels")
 @CrossOrigin
 public class ChannelController {
+
+  private final ChannelService channelService;
   @PostMapping()
   public Channel create(@RequestBody Channel channel){
-    return channel;
+    return channelService.create(channel);
   }
 
   @GetMapping()
   public List<Channel> findAll(){
-    //TODO: Serviceを作成するまでは暫定的にからのリストを返却
-    return Collections.emptyList();
+    return channelService.findAll();
   }
 
 }
