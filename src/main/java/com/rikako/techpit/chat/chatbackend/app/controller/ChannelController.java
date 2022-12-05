@@ -1,24 +1,24 @@
 package com.rikako.techpit.chat.chatbackend.app.controller;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rikako.techpit.chat.chatbackend.app.service.ChannelService;
-import com.rikako.techpit.chat.chatbackend.domain.hello.model.channels.model.Channel;
+import com.rikako.techpit.chat.chatbackend.domain.channels.model.Channel;
 
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/channels")
+@RequiredArgsConstructor
 @CrossOrigin
 public class ChannelController {
 
@@ -33,4 +33,11 @@ public class ChannelController {
     return channelService.findAll();
   }
 
+  @PutMapping("/{id}")
+  public Channel update(@PathVariable("id") int id, @RequestBody Channel channel){
+    channel.setId(id);
+    return channelService.update(channel);
+  }
+
 }
+

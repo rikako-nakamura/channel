@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rikako.techpit.chat.chatbackend.domain.hello.model.channels.model.Channel;
-import com.rikako.techpit.chat.chatbackend.domain.hello.service.ChannelDomainService;
+import com.rikako.techpit.chat.chatbackend.domain.channels.model.Channel;
+import com.rikako.techpit.chat.chatbackend.domain.channels.service.ChannelDomainService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -23,5 +23,9 @@ public class ChannelService {
   
   public List<Channel> findAll(){
     return channelDomainService.findAll();
+  }
+
+  public Channel update(Channel channel){
+    return channelDomainService.update(channel);
   }
 }

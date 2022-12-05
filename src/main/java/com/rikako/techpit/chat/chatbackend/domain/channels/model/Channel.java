@@ -1,4 +1,4 @@
-package com.rikako.techpit.chat.chatbackend.domain.hello.model.channels.model;
+package com.rikako.techpit.chat.chatbackend.domain.channels.model;
 
 import lombok.Data;
 
