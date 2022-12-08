@@ -16,16 +16,20 @@ import lombok.RequiredArgsConstructor;
 public class ChannelService {
 
   private final ChannelDomainService channelDomainService;
-
+  
   public Channel create(Channel channel){
     return channelDomainService.create(channel);
   }
-  
+
   public List<Channel> findAll(){
     return channelDomainService.findAll();
   }
 
   public Channel update(Channel channel){
     return channelDomainService.update(channel);
+  }
+
+  public void delete(int id){
+    channelDomainService.delete(id);
   }
 }

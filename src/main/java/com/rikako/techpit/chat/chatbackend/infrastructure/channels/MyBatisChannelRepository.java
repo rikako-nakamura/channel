@@ -12,7 +12,8 @@ import lombok.RequiredArgsConstructor;
 
 @Repository
 @RequiredArgsConstructor
-public class MyBatisChannelRepository implements ChannelRepository{
+public class MyBatisChannelRepository implements ChannelRepository {
+
   private final ChannelMapper channelMapper;
 
   @Override
@@ -35,4 +36,8 @@ public class MyBatisChannelRepository implements ChannelRepository{
     return channelMapper.update(channel);
   }
 
+  @Override
+  public int delete(int id) {
+    return channelMapper.delete(id);
+  }
 }

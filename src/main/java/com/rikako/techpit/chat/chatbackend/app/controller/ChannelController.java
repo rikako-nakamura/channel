@@ -3,6 +3,7 @@ package com.rikako.techpit.chat.chatbackend.app.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,6 +24,7 @@ import lombok.RequiredArgsConstructor;
 public class ChannelController {
 
   private final ChannelService channelService;
+
   @PostMapping()
   public Channel create(@RequestBody Channel channel){
     return channelService.create(channel);
@@ -39,5 +41,8 @@ public class ChannelController {
     return channelService.update(channel);
   }
 
+  @DeleteMapping("/{id}")
+  public void delete(@PathVariable("id") int id){
+    channelService.delete(id);
+  }
 }
-

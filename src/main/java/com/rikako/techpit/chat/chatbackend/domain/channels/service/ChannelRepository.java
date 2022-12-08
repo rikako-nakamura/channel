@@ -7,8 +7,12 @@ import com.rikako.techpit.chat.chatbackend.domain.channels.model.Channel;
 
 public interface ChannelRepository {
   void insert(Channel channel);
-  List<Channel> findAll();
+  
+  List<Channel> findAll();  
+  
   Optional<Integer> getMaxId();
-
-  int update(Channel channel);
+  
+  int update(Channel channel); 
+  
+  int delete(int id);
 }

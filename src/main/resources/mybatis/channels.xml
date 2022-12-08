@@ -13,7 +13,7 @@
   <select id="findAll" resultType="com.rikako.techpit.chat.chatbackend.domain.channels.model.Channel">
     SELECT * FROM channels
   </select>
-
+  
   <select id="getMaxId" resultType="int">
     SELECT MAX(id) AS max_id FROM channels
   </select>
@@ -24,4 +24,8 @@
     WHERE
       id = #{id}
   </update>
+
+  <delete id="delete">
+    DELETE FROM channels WHERE id = #{id}
+  </delete>
 </mapper>
